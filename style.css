@@ -1,0 +1,137 @@
+:root {
+    --azul: #1f3b73;
+    --azul-claro: #e8f0fe;
+    --cinza: #f7f7f7;
+    --destaque: #4caf50;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--cinza);
+    color: #333;
+  }
+  header {
+    background: var(--azul);
+    color: white;
+    padding: 1.5em 1em;
+    text-align: center;
+  }
+  nav {
+    margin-top: 0.5em;
+  }
+  nav a {
+    margin: 0 1em;
+    color: #cfd8ff;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  nav a:hover, nav a.active {
+    text-decoration: underline;
+  }
+  main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2em 1em;
+    min-height: 450px;
+  }
+  h2 {
+    border-left: 6px solid var(--azul);
+    padding-left: 0.5em;
+    color: var(--azul);
+  }
+  .card {
+    background: white;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 1em 0;
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    transform: scale(1.02);
+  }
+  .card strong {
+    color: var(--azul);
+  }
+  .modulos-grid {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .quiz button, .quiz select {
+    margin: 0.5em 0.5em 0;
+    padding: 0.5em 1em;
+    background: var(--azul);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .quiz button:hover, .quiz select:hover {
+    background: #162a53;
+  }
+  .quiz #quiz-feedback {
+    font-weight: bold;
+    margin-top: 1em;
+    min-height: 1.4em;
+  }
+  ul.dicas {
+    list-style: none;
+    padding-left: 0;
+  }
+  ul.dicas li::before {
+    content: '✔';
+    color: var(--destaque);
+    margin-right: 0.5em;
+  }
+  footer {
+    text-align: center;
+    padding: 2em 1em;
+    background: var(--azul);
+    color: white;
+    margin-top: 3em;
+  }
+  a {
+    color: var(--azul);
+  }
+  @media screen and (max-width: 600px) {
+    nav a {
+      display: block;
+      margin: 0.5em 0;
+    }
+  }
+  section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  section.active {
+    display: block;
+    opacity: 1;
+  }
+  #quiz-score {
+    margin-top: 1em;
+  }
+  #score-history {
+    margin-top: 1em;
+    background: #e8f0fe;
+    padding: 1em;
+    border-radius: 8px;
+    font-size: 0.9em;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  #clear-history {
+    background: #e74c3c;
+    margin-top: 0.5em;
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  #clear-history:hover {
+    background: #c0392b;
+  }

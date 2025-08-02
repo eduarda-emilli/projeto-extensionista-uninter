@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Segurança Digital para Todos - SPA com Quizzes e Histórico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="./favicon.png" type="image/x-icon">  
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Segurança Digital para Todos</h1>
+  <p>Aprenda a proteger sua vida digital com dicas simples e práticas.</p>
+  <nav>
+    <a data-target="modulos" class="active">Módulos</a>
+    <a data-target="quiz">Quiz</a>
+    <a data-target="dicas">Dicas</a>
+    <a data-target="contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+  <section id="modulos" class="active">
+    <h2>O que é Segurança Digital?</h2>
+    <p>A segurança digital é um conjunto de práticas, tecnologias e hábitos que visam proteger seus dados, sua identidade e seus dispositivos enquanto você utiliza a internet. Ela é essencial para prevenir golpes, invasões, vazamentos de informações e o uso indevido de suas contas e informações pessoais.</p>
+    <p>Com o avanço da tecnologia, cada vez mais nossas vidas acontecem online: compras, comunicação, trabalho, bancos, redes sociais... Por isso, entender como se proteger nesse ambiente é fundamental.</p>
+
+    <h2>Módulos Educativos</h2>
+    <div class="modulos-grid">
+      <div class="card">
+        <strong>🛡️ Senhas Fortes</strong>
+        <p>Evite senhas óbvias e repetidas. Crie senhas longas e complexas com letras maiúsculas, minúsculas, números e símbolos. Utilize gerenciadores de senha para armazená-las com segurança.</p>
+      </div>
+      <div class="card">
+        <strong>✉️ Golpes e Phishing</strong>
+        <p>Golpes de phishing são tentativas de enganar você para obter dados pessoais, senhas ou informações bancárias. Desconfie de e-mails, mensagens ou ligações que pedem informações confidenciais ou que contenham links suspeitos.</p>
+      </div>
+      <div class="card">
+        <strong>📱 Redes Sociais</strong>
+        <p>Configure as opções de privacidade para limitar quem vê suas postagens e dados pessoais. Evite compartilhar informações sensíveis, como endereço, telefone ou rotina diária.</p>
+      </div>
+      <div class="card">
+        <strong>📶 Wi-Fi Seguro</strong>
+        <p>Evite redes Wi-Fi públicas para acessar contas importantes. Se precisar usar, prefira conexões com VPN. No seu roteador, sempre altere a senha padrão e use criptografia WPA2 ou superior.</p>
+      </div>
+      <div class="card">
+        <strong>🦠 Atualizações e Antivírus</strong>
+        <p>Mantenha seu sistema operacional, aplicativos e antivírus sempre atualizados para corrigir vulnerabilidades exploradas por criminosos digitais.</p>
+      </div>
+      <div class="card">
+        <strong>🔐 Autenticação em Dois Fatores</strong>
+        <p>Ative a autenticação em duas etapas (2FA) nas suas contas, adicionando uma camada extra de segurança que exige um código temporário além da senha.</p>
+      </div>
+      <div class="card">
+        <strong>🛑 Cuidado com Downloads</strong>
+        <p>Baixe softwares apenas de fontes oficiais e confiáveis. Evite clicar em anúncios ou links duvidosos que podem conter malware.</p>
+      </div>
+      <div class="card">
+        <strong>💾 Backup Regular</strong>
+        <p>Faça cópias de segurança dos seus arquivos importantes, seja na nuvem ou em dispositivos externos, para evitar perda em caso de ataques ou falhas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <h2>Quiz Interativo</h2>
+    <label for="select-quiz">Escolha um quiz:</label>
+    <select id="select-quiz" aria-label="Selecione um quiz">
+      <option value="">-- Selecione --</option>
+      <option value="geral">Segurança Geral</option>
+      <option value="senhas">Senhas</option>
+      <option value="phishing">Phishing</option>
+      <option value="wifi">Wi-Fi e Redes</option>
+      <option value="backup">Backup e Antivírus</option>
+    </select>
+
+    <div id="quiz-container" style="display:none;">
+      <div id="question-container">
+        <p id="question-text"></p>
+        <div id="answers-buttons" aria-live="polite" style="margin-top: 10px;"></div>
+      </div>
+      <button id="next-btn" style="margin-top: 1em; padding: 0.5em 1em; display:none; background: var(--azul); color:white; border:none; border-radius:5px; cursor:pointer;">
+        Próxima
+      </button>
+      <p id="quiz-feedback" role="alert"></p>
+      <p id="quiz-score" aria-live="polite"></p>
+      <button id="restart-btn" style="margin-top: 1em; padding: 0.5em 1em; background: var(--destaque); color:white; border:none; border-radius:5px; cursor:pointer; display:none;">
+        Reiniciar Quiz
+      </button>
+      <div id="score-history" aria-live="polite" style="display:none;">
+        <strong>Histórico de pontuações:</strong>
+        <ul id="history-list"></ul>
+        <button id="clear-history">Limpar histórico</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="dicas">
+    <h2>Dicas Rápidas</h2>
+    <ul class="dicas">
+      <li>Use autenticação em duas etapas sempre que possível.</li>
+      <li>Não compartilhe suas senhas com ninguém.</li>
+      <li>Evite redes Wi-Fi públicas para acessar contas bancárias.</li>
+      <li>Desconfie de promoções boas demais para serem verdade.</li>
+      <li>Faça backup dos seus arquivos regularmente.</li>
+      <li>Desative conexões automáticas com redes Wi-Fi desconhecidas.</li>
+      <li>Utilize gerenciadores de senha para criar e armazenar senhas fortes.</li>
+      <li>Evite usar computadores públicos para acessar dados sensíveis.</li>
+      <li>Revise as permissões dos aplicativos no seu celular e computador.</li>
+      <li>Leia atentamente os termos de privacidade antes de instalar programas.</li>
+    </ul>
+  </section>
+
+  <section id="contato">
+    <h2>Contato e Sugestões</h2>
+    <p>Tem dúvidas ou sugestões? Envie para <a href="mailto:contato@segurancadigital.com">contato@segurancadigital.com</a></p>
+  </section>
+</main>
+
+<footer>
+  <strong><p>© 2025 Segurança Digital | Extensionista II</p></strong>
+</footer>
+<script src="./script.js" defer></script>
+</body>
+</html>
